@@ -1,0 +1,107 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 6rem;
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      list-style: none;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px; // deixa a linha mais elegante
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .button-nav {
+    display: flex;
+    font-family: "nunito", sans-serif;
+    font-weight: 600;
+    gap: 1rem;
+
+    #btn-projects-nav {
+      background: linear-gradient(132deg, white 0%, #999999 100%);
+      color: black;
+      font-family: "nunito", sans-serif;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    #btn-contact-nav {
+      color: white;
+      font-family: "nunito", sans-serif;
+      font-weight: 300;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid white;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+      background-color: transparent;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 1.5rem 3rem;
+
+    .nav-links {
+      gap: 1.5rem;
+      margin-top: 1rem;
+
+      a {
+        font-size: 0.8rem;
+      }
+    }
+
+    .button-nav {
+      margin-top: 1rem;
+    }
+  }
+  
+}
